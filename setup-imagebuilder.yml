@@ -4,7 +4,7 @@
   gather_facts: yes
   tasks:
   - name: Include ansible vault secrets
-    include_vars:
+    ansible.builtin.include_vars:
       file: "secrets.yml"
   - name: setup image builder
     ansible.builtin.include_role:

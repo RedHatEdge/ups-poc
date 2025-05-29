@@ -2,7 +2,7 @@
 all:
   hosts:
     imagebuilder:
-      ansible_host: "ec2-34-220-27-47.us-west-2.compute.amazonaws.com"
+      ansible_host: "ec2-34-219-232-241.us-west-2.compute.amazonaws.com"
       ansible_port: 22
       ansible_user: "admin"
       ansible_ssh_private_key_file: "/Users/rgopinat/.ssh/ec2"
