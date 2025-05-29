@@ -24,17 +24,15 @@ builder_compose_customizations:
       disabled: ["telnet"]
     ports: ["8080:tcp", "9090:tcp", "8081:tcp", "8089:tcp", "8096:tcp", "8443:tcp", "8480:tcp", "9091:tcp", "9099:tcp"]
   directories:
+  - path: "/etc/systemd/journald.conf.d"
   - path: "/etc/systemd/system/podman-auto-update.timer.d"
-  - path: "/etc/greenboot/check/required.d"
+  - path: "/etc/microshift"
+  - path: "/etc/microshift/manifests.d/argocd"
   files:
   - path: "/etc/systemd/system/podman-auto-update.timer.d/splay.conf"
     data: |
       [Timer]
       RandomizedDelaySec=7200
-  - path: "/etc/rpm-ostreed.conf"
-    data: |
-      [Daemon]
-      AutomaticUpdatePolicy=stage
   - path: "/etc/systemd/journald.conf.d/microshift.conf"
     data: |
       [Journal]
