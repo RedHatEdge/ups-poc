@@ -1,15 +1,15 @@
 ---
-name: Configure github actions runner
-hosts: imagebuilder
-become: true
-tasks:
-- name: load secrets from ansible vault
-  include_vars:
-    file: "secrets.yml"
-- name: Configure as Self hosted GH actions runner
-  ansible.builtin.include_role:
-    name: rprakashg.demos.configure_gh_actions_runner
-  vars:
-    runner_version: "2.324.0"
-    github_repo: "ups-poc"
-    github_org: "redhatedge"
+- name: Configure github actions runner
+  hosts: imagebuilder
+  become: true
+  tasks:
+  - name: load secrets from ansible vault
+    include_vars:
+      file: "secrets.yml"
+  - name: Configure as Self hosted GH actions runner
+    ansible.builtin.include_role:
+      name: rprakashg.demos.configure_gh_actions_runner
+    vars:
+      runner_version: "2.324.0"
+      github_repo: "ups-poc"
+      github_org: "redhatedge"
