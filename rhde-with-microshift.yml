@@ -6,11 +6,7 @@ builder_compose_type: vmdk
 builder_compose_pkgs:
 - cockpit
 - cockpit-podman
-- greenboot
-- greenboot-grub2
-- greenboot-default-health-checks
 - microshift
-- microshift-greenboot
 - microshift-networking
 - microshift-release-info
 - microshift-selinux
