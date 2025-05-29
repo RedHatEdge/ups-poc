@@ -4,9 +4,6 @@
   become: yes
   gather_facts: yes
   tasks:
-  - name: Load vars
-    ansible.builtin.include_vars:
-      file: rhde-with-microshift.yml
   - name: Build 
     ansible.builtin.import_role:
       name: infra.osbuild.builder

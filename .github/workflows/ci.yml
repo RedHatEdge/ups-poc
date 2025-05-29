@@ -10,5 +10,5 @@ jobs:
         - name: Run playbook
           run: |
             echo "Running ansible playbook"
-            ansible-playbook build-image.yml
+            ansible-playbook build-image.yml -e @rhde-with-microshift.yml
           shell: bash
