@@ -2,6 +2,7 @@
 builder_blueprint_name: rhde-with-microshift
 builder_blueprint_description: "Base Red Hat Device Edge 9.6 blueprint"
 builder_blueprint_distro: "rhel-9"
+builder_compose_type: vmdk
 builder_compose_pkgs:
 - cockpit
 - cockpit-podman
