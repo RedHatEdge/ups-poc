@@ -3,11 +3,15 @@
   hosts: localhost
   gather_facts: yes
   tasks:
-  - name: Echo
-    run: |
-      echo "From playbook"
-    shell: bash
-    
+  - name: Slurp the file
+    slurp:
+      src: secrets.yml
+    register: file_content
+
+  - name: Print file content
+    debug:
+      msg: "{{ file_content.content | b64decode }}"
+
   #- name: Include ansible vault secrets
   #  include_vars:
   #    file: "secrets.yml"
