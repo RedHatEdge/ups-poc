@@ -3,25 +3,16 @@
   hosts: localhost
   gather_facts: yes
   tasks:
-  - name: Slurp the file
-    slurp:
-      src: secrets.yml
-    register: file_content
-
-  - name: Print file content
-    debug:
-      msg: "{{ file_content.content | b64decode }}"
-
-  #- name: Include ansible vault secrets
-  #  include_vars:
-  #    file: "secrets.yml"
-  #- name: setup image builder
-  #  ansible.builtin.include_role:
-  #    name: rprakashg.demos.setup_imagebuilder
-  #  vars:
-  #    create_infra: true
-  #    base_domain: "{{ base_domain }}"
-  #    subdomain: "ostree"
-  #    region: "{{ region }}"
-  #    microshift_release: "{{ microshift_release }}"
-  #    create_gpg_key: "{{ create_gpg_key }}"
+  - name: Include ansible vault secrets
+    include_vars:
+      file: "secrets.yml"
+  - name: setup image builder
+    ansible.builtin.include_role:
+      name: rprakashg.demos.setup_imagebuilder
+    vars:
+      create_infra: true
+      base_domain: "{{ base_domain }}"
+      subdomain: "ostree"
+      region: "{{ region }}"
+      microshift_release: "{{ microshift_release }}"
+      create_gpg_key: "{{ create_gpg_key }}"

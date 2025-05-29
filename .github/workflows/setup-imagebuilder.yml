@@ -32,10 +32,10 @@ jobs:
             chmod 600 ~/.ssh/ec2
           shell: bash
         
-        - name: Read encrypted ansible vault contents from repository secrets and output to file 
-          run: |
-            echo "${{ secrets.ANSIBLE_VAULT }}" > "${{ github.workspace }}/secrets.yml"
-          shell: bash
+        #- name: Read encrypted ansible vault contents from repository secrets and output to file 
+        #  run: |
+        #    echo "${{ secrets.ANSIBLE_VAULT }}" > "${{ github.workspace }}/secrets.yml"
+        #  shell: bash
         
         - name: Install rprakashg.demos ansible collection
           run: |
