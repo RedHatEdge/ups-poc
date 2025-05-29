@@ -32,11 +32,11 @@ jobs:
             chmod 600 ~/.ssh/ec2
           shell: bash
         
-        #- name: Read encrypted ansible vault contents from repository secrets and output to file 
-        #  run: |
-        #    echo "${{ secrets.ANSIBLE_VAULT }}" > "${{ github.workspace }}/secrets.yml"
-        #  shell: bash
-        
+        - name: Set up Terraform
+          uses: hashicorp/setup-terraform@v3
+          with:
+            terraform_version: 1.6.6
+
         - name: Install rprakashg.demos ansible collection
           run: |
             ansible-galaxy collection install git+https://github.com/rprakashg/demos.git,main
