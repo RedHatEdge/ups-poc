@@ -10,7 +10,7 @@
     ansible.builtin.include_role:
       name: rprakashg.demos.setup_imagebuilder
     vars:
-      create_infra: true
+      create_infra: "{{ create_infra }}"
       base_domain: "{{ base_domain }}"
       subdomain: "ostree"
       region: "{{ region }}"
